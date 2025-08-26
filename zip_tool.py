@@ -156,19 +156,6 @@ def main():
         print(f"压缩模式: {args.compress}")
         print(f"解压模式: {args.extract}")
         
-        # 如果没有指定模式，根据路径自动判断
-        if not args.compress and not args.extract:
-            path = Path(args.path)
-            
-            if path.is_dir():
-                args.compress = True
-            elif path.suffix.lower() == '.zip':
-                args.extract = True
-            else:
-                print("错误: 无法确定操作模式，请指定 -c (压缩) 或 -x (解压)")
-                input("按回车键退出...")
-                sys.exit(1)
-        
         success = False
         
         if args.compress:
