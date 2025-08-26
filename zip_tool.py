@@ -149,7 +149,6 @@ def main():
         parser.add_argument('path', help='文件夹路径（压缩）或ZIP文件路径（解压）')
         parser.add_argument('-c', '--compress', action='store_true', help='压缩模式：将文件夹压缩为ZIP')
         parser.add_argument('-x', '--extract', action='store_true', help='解压模式：解压ZIP文件')
-        parser.add_argument('-o', '--output', help='输出路径（可选）')
         
         args = parser.parse_args()
         
@@ -160,17 +159,11 @@ def main():
         # 如果没有指定模式，根据路径自动判断
         if not args.compress and not args.extract:
             path = Path(args.path)
-            print(f"自动判断模式...")
-            print(f"路径存在: {path.exists()}")
-            print(f"是文件夹: {path.is_dir()}")
-            print(f"文件后缀: {path.suffix}")
             
             if path.is_dir():
                 args.compress = True
-                print("自动选择压缩模式")
             elif path.suffix.lower() == '.zip':
                 args.extract = True
-                print("自动选择解压模式")
             else:
                 print("错误: 无法确定操作模式，请指定 -c (压缩) 或 -x (解压)")
                 input("按回车键退出...")
@@ -180,10 +173,10 @@ def main():
         
         if args.compress:
             print("开始压缩操作...")
-            success = compress_folder(args.path, args.output)
+            success = compress_folder(args.path)
         elif args.extract:
             print("开始解压操作...")
-            success = extract_zip(args.path, args.output)
+            success = extract_zip(args.path)
         
         if success:
             print("操作成功完成！")
