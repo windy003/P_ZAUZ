@@ -16,10 +16,3 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\SystemFileAssociations\.zip\shell\ExtractHere\command]
 @="\"D:\\files\\projects\\tmp\\extract.bat\" \"%1\""
 
-; 文件夹背景右键菜单 - 压缩为ZIP (快捷键 Z)  
-[HKEY_CLASSES_ROOT\Directory\Background\shell\CompressToZip]
-@="Compress to &ZIP"
-"Icon"="shell32.dll,165"
-
-[HKEY_CLASSES_ROOT\Directory\Background\shell\CompressToZip\command]
-@="\"D:\\files\\projects\\tmp\\compress.bat\" \"%V\""

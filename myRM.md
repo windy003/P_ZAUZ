@@ -1,0 +1,3 @@
+使用时,在compress.bat和extract.bat中指定python.exe的路径
+
+在install_menu.reg文件中指定bat的路径
