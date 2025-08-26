@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(del compress.py extract.py)"
+    ],
+    "deny": [],
+    "ask": [],
+    "additionalDirectories": [
+      "C:\\Users\\92892\\.pyenv\\pyenv-win\\shims"
+    ]
+  }
+}
